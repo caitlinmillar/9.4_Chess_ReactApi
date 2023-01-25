@@ -1,6 +1,9 @@
 const Player = ({ player }) => {
     return(
-        <h3>Player: {player.name} {player.id}</h3>
+        <>
+        <h3>Player: {player.name}</h3>
+        <p>Player id: {player.id}</p>
+        </>
     )
 }
 
