@@ -24,13 +24,25 @@ const ChessContainer = () => {
     //         .catch((err) => setError(err.message));
     //     },
     // [])
-
-    
     
     useEffect(() => {
-        fetch(`https://api.chess.com/pub/titled/GM`)
+        // const getGMs = async () => {
+        //     const response = await fetch(`https://api.chess.com/pub/titled/GM`)
+        //     const data = await response.json();
+        //     setGm(data.gm);
+        // }
+        // getGMs()
+            fetch(`https://api.chess.com/pub/titled/GM`)
+                .then((response) => response.json())
+                .then((data) => setPlayers(data.players))
+                .catch((err) => setError(err.message));
+    }, [])
+
+    const [im, setIm] = useState([])
+    useEffect(() => {
+        fetch(`https://api.chess.com/pub/titled/IM`)
             .then((response) => response.json())
-            .then((data) => setPlayers(data.players))
+            .then((data) => setIm(data.im))
             .catch((err) => setError(err.message));
     }, [])
 
@@ -45,18 +57,25 @@ const ChessContainer = () => {
                 </div>
             </div>   
             <ul>
+                <li>
+                    <Link to="/International-masters">List of International Masters</Link>
+                </li>
                 
                 <li>
-                    <Link to="/GrandMasters">List of GrandMasters</Link>
+                    <Link to="/Grand-masters">List of GrandMasters</Link>
                 </li>
             </ul> 
             <div className="GM_List">
             <Routes>
-                
-                    <Route path="/GrandMasters" element={
+                    {/* <Route path="/International-masters" element={
                     <PlayerList 
-                        players={players}/>}
-                    />
+                        im={im}
+                        players={players}/>}/> */}
+                
+                    <Route path="/Grand-masters" element={
+                    <PlayerList 
+                        players={players}
+                        />}/>
              
             </Routes>    
             </div>

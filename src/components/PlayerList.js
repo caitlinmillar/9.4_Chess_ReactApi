@@ -13,6 +13,10 @@ const PlayerList = ({ players }) => {
         <ul>
         {playerComponents}
         </ul>
+        <h3> List of International Masters </h3>
+        <ul>
+        {playerComponents}
+        </ul>
         </>
     )
 }

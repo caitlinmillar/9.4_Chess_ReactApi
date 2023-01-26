@@ -10,14 +10,14 @@ h2{
 .header{
   background: url(https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/PedroPinhata/phpxsIApe.png) center center/cover no-repeat;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  padding: 3rem;
+  padding: 2rem;
   flex-grow: 1;
 }
 
 .form {
   margin-left: 2%;
   width: 100px;
-  padding: 3rem;
+  padding: 2rem;
   margin-left: inherit;
   margin-top: 2%;
   margin-bottom: 2%;
