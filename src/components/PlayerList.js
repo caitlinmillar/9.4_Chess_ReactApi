@@ -3,15 +3,16 @@ import Player from "./Player";
 const PlayerList = ({ players }) => {
 
     const playerComponents = players.map((player, id) => {
-    return <Player player = {player} key={id} />
+    return <li><Player player = {player} key={id} /></li>
     })
 
     return(
         <>
-        <h2>Chess.com </h2>
         <hr />
+        <h3> List of Grand Masters </h3>
+        <ul>
         {playerComponents}
-        
+        </ul>
         </>
     )
 }
