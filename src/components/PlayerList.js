@@ -1,21 +1,17 @@
 import Player from "./Player";
 
 const PlayerList = ({ players }) => {
-    // const playerComponents = players.map((player) => {
-    //     return(
-    //         <Player
-    //         key={player.id}
-    //         value={player}>
-    //         {player.name}
-    //         </Player>
-            
-    //     )
-    // });
+
+    const playerComponents = players.map((player, id) => {
+    return <Player player = {player} key={id} />
+    })
+
     return(
         <>
-        <h2>Players</h2>
+        <h2>Chess.com </h2>
         <hr />
-    
+        {playerComponents}
+        
         </>
     )
 }

@@ -1,8 +1,8 @@
 const Player = ({ player }) => {
     return(
         <>
-        <h3>Player: {player.name}</h3>
-        <p>Player id: {player.id}</p>
+        <h3>Player: {player}</h3>
+        <p>{player}</p>
         </>
     )
 }
