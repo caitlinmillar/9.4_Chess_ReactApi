@@ -35,16 +35,17 @@ const ChessContainer = () => {
 
 
     return(
-        <>
-            <h2 className="header">Chess.com </h2>
-            <div className="form">
-                <PlayerForm players={players}/>
-            </div>
-            <div className="GM_List">
-                <PlayerList players={players}/>
-            </div>
-       
-        </>    
+        <div className="container">
+            <div className="header_bar">
+                <h2 className="header">Chess.com </h2>
+                <div className="form">
+                    <PlayerForm players={players}/>
+                </div>
+            </div>    
+                <div className="GM_List">
+                    <PlayerList players={players}/>
+                </div>
+        </div>    
     )
 }
 

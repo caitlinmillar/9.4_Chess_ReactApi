@@ -2,8 +2,8 @@ import Player from "./Player";
 
 const PlayerList = ({ players }) => {
 
-    const playerComponents = players.map((player, id) => {
-    return <li><Player player = {player} key={id} /></li>
+    const playerComponents = players.slice(0,150).map((player, id) => {
+    return <li><span><Player player = {player} key={id} /></span></li>
     })
 
     return(

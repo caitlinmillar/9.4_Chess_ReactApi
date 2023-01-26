@@ -19,6 +19,7 @@ const PlayerForm = ({players, postPlayer}) => {
     }
 
     return(
+        <div className="inputs">
         <form onSubmit={handleFormSubmit}>
             <h3>Create an account: </h3>
             <input 
@@ -44,6 +45,7 @@ const PlayerForm = ({players, postPlayer}) => {
 
             <button type="submit">Go</button>
         </form>
+        </div>
     )
 }
 export default PlayerForm;

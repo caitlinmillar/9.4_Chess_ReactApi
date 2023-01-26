@@ -1,13 +1,38 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+h2{
+  color: #fff;
+  text-shadow: 3px 3px 4px rgb(84, 160, 84);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header_bar {
+  display: flex;
+}
+
+.header{
+  background: url(https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/PedroPinhata/phpxsIApe.png) center center/cover no-repeat;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 3rem;
+  flex-grow: 1;
+}
+
+.form {
+  margin-left: 2%;
+  width: 100px;
+  padding: 3rem;
+  margin-left: inherit;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 2rem 2rem 2%;
+  border: 10px double #326F06;
+}
+
+input{
+  border-width: .5rem;
+  align-content: center;
+  width: 90%;
+  margin: inherit;
+}
+
+.GM_List{
+  column-count: 4;
+ 
 }
