@@ -1,9 +1,14 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 
-const PlayerForm = ({players, postPlayer}) => {
+const PlayerForm = ({players}) => {
     const [name, setName] = useState("");
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+
+    const navigate = useNavigate();
+
+    
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
@@ -12,7 +17,7 @@ const PlayerForm = ({players, postPlayer}) => {
             username,
             password
         }
-        postPlayer(postBody);
+
         setName("");
         setUsername("")
         setPassword("")
@@ -43,7 +48,7 @@ const PlayerForm = ({players, postPlayer}) => {
                 onChange={(event) => setPassword(event.target.value)}
             />
 
-            <button type="submit"><span>Go</span></button>
+            <button class="shadow__btn" type="submit"><span>Go</span></button>
         </form>
         </div>
     )

@@ -5,45 +5,41 @@ import PlayerList from "../components/PlayerList";
 import PlayerForm from "../components/PlayerForm";
 import Search from "../components/Search";
 
-
-
 const ChessContainer = () => {
     const [players, setPlayers] = useState([]);
+    const [name, setName] = useState([]);
     const [error, setError] = useState("");
+    const [im, setIm] = useState([])
+    const [gm, setGm] = useState([]);
+    const [wgm, setWgm] = useState([]);
 
-
-    // const loadPlayers = () => {
-    //     fetch("https://api.chess.com/pub/titled/GM")
-    //     .then(response => response.json())
-    //     .then(data => setPlayers(data));
-    // }
 
     // useEffect(() => {
-    //     fetch(`https://api.chess.com/pub/player/caitls712`)
+    //     fetch(`https://api.chess.com/pub/player/caitls712/stats`)
     //         .then((response) => response.json())
-    //         .then((data) => setPlayers(data.players.name))
+    //         .then((data) => setName(data.players))
     //         .catch((err) => setError(err.message));
     //     },
     // [])
     
     useEffect(() => {
-        // const getGMs = async () => {
-        //     const response = await fetch(`https://api.chess.com/pub/titled/GM`)
-        //     const data = await response.json();
-        //     setGm(data.gm);
-        // }
-        // getGMs()
             fetch(`https://api.chess.com/pub/titled/GM`)
                 .then((response) => response.json())
-                .then((data) => setPlayers(data.players))
+                .then((data) => setGm(data.players))
                 .catch((err) => setError(err.message));
     }, [])
 
-    const [im, setIm] = useState([])
     useEffect(() => {
         fetch(`https://api.chess.com/pub/titled/IM`)
             .then((response) => response.json())
-            .then((data) => setIm(data.im))
+            .then((data) => setIm(data.players))
+            .catch((err) => setError(err.message));
+    }, [])
+
+    useEffect(() => {
+        fetch(`https://api.chess.com/pub/titled/WGM`)
+            .then((response) => response.json())
+            .then((data) => setWgm(data.players))
             .catch((err) => setError(err.message));
     }, [])
 
@@ -54,6 +50,9 @@ const ChessContainer = () => {
         <div className="search"><Search /></div>
                 <Link to="/International-masters"> International Masters</Link>
                 <Link to="/Grand-masters"> Grand Masters</Link>
+                <Link to="/Woman-grand-masters"> Woman Grand Masters</Link>
+                {/* <button className="myStats">
+                <Link to="/player/caitls712/stats"> Caitlin</Link></button> */}
             </div> 
             
             
@@ -67,21 +66,28 @@ const ChessContainer = () => {
             
             <div className="GM_List">
             <Routes>
-                    {/* <Route path="/International-masters" element={
+                    <Route path="/International-masters" element={
                     <PlayerList 
-                        im={im}
-                        players={players}/>}/> */}
+                        players={im}
+                        />}/>
                 
                     <Route path="/Grand-masters" element={
                     <PlayerList 
-                        players={players}
+                        players={gm}
                         />}/>
-             
-            </Routes>    
+                    
+                    <Route path="/Woman-grand-masters" element={
+                    <PlayerList 
+                        players={wgm}
+                        />}/>
+
+                    {/* <Route path="/player/caitls712/stats" element={
+                    <PlayerList 
+                        players={name}
+                        />}/> */}
+            </Routes>
             </div>
-            <hr/>
             <div className="mainPage">
-                <img />
             </div>
         </div> 
         </BrowserRouter>

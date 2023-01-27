@@ -1,5 +1,7 @@
+import { useState } from "react";
 
 const Search = () =>{
+    const [searchInput, setSearchInput] = useState("")
 
     return(
         <>
