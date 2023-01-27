@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Player from "../components/Player";
 import PlayerList from "../components/PlayerList";
 import PlayerForm from "../components/PlayerForm";
+import Search from "../components/Search";
 
 
 
@@ -49,22 +50,21 @@ const ChessContainer = () => {
 
     return(
         <BrowserRouter>
+        <div className="navBar">
+        <div className="search"><Search /></div>
+                <Link to="/International-masters"> International Masters</Link>
+                <Link to="/Grand-masters"> Grand Masters</Link>
+            </div> 
+            
+            
         <div className="container">
             <div className="header_bar">
                 <h2 className="header">Chess.com </h2>
                 <div className="form">
                     <PlayerForm players={players}/>
                 </div>
-            </div>   
-            <ul>
-                <li>
-                    <Link to="/International-masters">List of International Masters</Link>
-                </li>
-                
-                <li>
-                    <Link to="/Grand-masters">List of GrandMasters</Link>
-                </li>
-            </ul> 
+            </div>  
+            
             <div className="GM_List">
             <Routes>
                     {/* <Route path="/International-masters" element={
@@ -78,6 +78,10 @@ const ChessContainer = () => {
                         />}/>
              
             </Routes>    
+            </div>
+            <hr/>
+            <div className="mainPage">
+                <img />
             </div>
         </div> 
         </BrowserRouter>

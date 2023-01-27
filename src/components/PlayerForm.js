@@ -43,7 +43,7 @@ const PlayerForm = ({players, postPlayer}) => {
                 onChange={(event) => setPassword(event.target.value)}
             />
 
-            <button type="submit">Go</button>
+            <button type="submit"><span>Go</span></button>
         </form>
         </div>
     )
